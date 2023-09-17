@@ -100,6 +100,49 @@ int cruz()
     }
 }
 
+int terceraFigura()
+{
+    char high = '+', low='-';
+    char matriz[8][8];
+    int i = 0;
+    int sep1 = 0,sep2 = 2, sep3 = 3, sep4 = 5, sep5 = 6; //señalamos los leds apagados
+    //introducimos el ciclo for que se encarga de llenar la matriz
+    while(i >=0 && i<8){
+        //hacemos los ciclos que van a crear las filas
+        for(int a=0; a<2; a++){
+            for(int j=0; j<8; j++){
+                if(j==sep2 || j==sep4){
+                    matriz[i][j]=low;
+                }else{
+                    matriz[i][j]=high;
+                }
+            }
+            i += 1;
+        }
+        for(int a=0;a<2;a++){
+            for(int j=0; j<8; j++){
+                if(j==sep1 || j==sep3 || j==sep5){
+                    matriz[i][j]=low;
+                }else{
+                    matriz[i][j]=high;
+                }
+            }
+            i += 1;
+        }
+
+    }
+    //imprimimos la matriz
+
+    for(int i=0; i<8; i++){
+        for(int j=0;j<8;j++){
+            char posicion= matriz[i][j];
+            char espacio= ' ';
+            cout<< espacio<< posicion;
+        }
+        cout<<endl;
+    }
+}
+
 int flecha()
 {
     char high='+', low='-';
