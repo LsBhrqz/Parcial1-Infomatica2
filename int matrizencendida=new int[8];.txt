@@ -1,0 +1,23 @@
+int **matrizencendida=new int*[8];
+    for (int i=0;i < 8 ; i++)matrizencendida[i]=new int[8];
+
+    int high=0, low=1;
+    int matriz[8][8];
+    for(int i=0; i<8; i++){
+        for(int j=0;j<8;j++){
+            matrizencendida[i][j]= high;
+        }
+    }
+    for(int i=0; i<8; i++){
+        for(int j=0;j<8;j++){
+            int posicion= matrizencendida[i][j];
+            char espacio= ' ';
+            cout<< espacio<< posicion;
+        }
+        cout<<endl;
+    }
+
+    for(int i=0; i<8; i++){
+        delete matrizencendida[i];
+    }
+    delete[]matrizencendida;
